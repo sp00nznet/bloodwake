@@ -149,7 +149,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         xbox_path_init("Blood Wake (USA)", NULL);
     }
 
-    /* Step 4: Initialize Xbox kernel bridge (thunk table in Xbox memory) */
+    /* Step 4: Initialize kernel bridge.
+     * xbox_MemoryLayoutInit already parsed the XBE header to find the thunk
+     * table address and called xbox_kernel_set_thunk_address(). Now we
+     * resolve the ordinals to synthetic VAs. */
     printf("Initializing kernel bridge...\n");
     xbox_kernel_bridge_init();
 

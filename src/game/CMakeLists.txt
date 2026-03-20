@@ -26,18 +26,11 @@ target_link_options(bloodwake PRIVATE
 target_include_directories(bloodwake PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/..
     ${CMAKE_CURRENT_SOURCE_DIR}/recomp
+    ${XBOXRECOMP_DIR}/src
 )
 
-# Link xboxrecomp runtime libraries
-target_link_libraries(bloodwake PRIVATE
-    xbox_kernel
-    xbox_d3d8
-    xbox_dsound
-    xbox_input
-    # Uncomment as needed:
-    # xbox_apu
-    # xbox_nv2a
-)
+# Link all xboxrecomp runtime libraries (kernel, d3d8, dsound, apu, nv2a, input)
+target_link_libraries(bloodwake PRIVATE xboxrecomp)
 
 # System libraries
 target_link_libraries(bloodwake PRIVATE
@@ -46,6 +39,7 @@ target_link_libraries(bloodwake PRIVATE
     d3dcompiler
     xinput
     winmm
+    bcrypt
 )
 
 # Output to bin/
