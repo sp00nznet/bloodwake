@@ -1,0 +1,54 @@
+# Game files (not redistributable)
+Blood Wake (USA).iso
+*.iso
+
+# Build artifacts
+build/
+bin/
+*.obj
+*.lib
+*.exe
+*.pdb
+*.ilk
+
+# Generated recompiled code
+src/game/recomp/gen/
+
+# Game data (keep analysis JSON, ignore binaries)
+Blood Wake (USA)/*.xbe
+Blood Wake (USA)/audio/
+Blood Wake (USA)/boats/
+Blood Wake (USA)/common/
+Blood Wake (USA)/fonts/
+Blood Wake (USA)/languages/
+Blood Wake (USA)/misc/
+Blood Wake (USA)/missions/
+Blood Wake (USA)/music/
+Blood Wake (USA)/objects/
+Blood Wake (USA)/overlays/
+Blood Wake (USA)/screens/
+Blood Wake (USA)/video/
+Blood Wake (USA)/weapons/
+Blood Wake (USA)/XDemos/
+Blood Wake (USA)/Splash.toc
+
+# Tool output (regenerable)
+tools/disasm/output/asm/
+tools/disasm/output/*.json
+tools/func_id/output/
+tools/recomp/output/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
